@@ -1,0 +1,20 @@
+{
+  "name": "fullstack-coffee-react",
+  "version": "1.0.0",
+  "description": "Coffee app with front end and back end",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "start-watch": "nodemon app.js",
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.9",
+    "serve-favicon": "^2.4.3"
+  }
+}
