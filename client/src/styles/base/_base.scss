@@ -1,0 +1,35 @@
+body {
+  background-color: $background-primary;
+  box-sizing: border-box;
+  font: 14px $font-family-text-secondary;
+  min-height: 100vh;
+}
+
+a {
+  color: $font-color-bright;
+  text-decoration: none;
+}
+
+h1 {
+  color: $font-color-primary;
+  font: {
+    family: $font-family-header;
+    size: $font-size-xlarge;
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    font-size: $font-size-xxlarge;
+  }
+}
+
+h3 {
+  color: $font-color-bright;
+  margin: 5px 0 10px 0;
+}
+
+p, span {
+  color: $font-color-secondary;
+  margin: 0;
+}
+
+//AIzaSyBE9cgGx0m_7Us1rJSjyLUmzEk8TZWnKqY
