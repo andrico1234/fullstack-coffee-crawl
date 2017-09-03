@@ -20,7 +20,7 @@ class LocationContainer extends Component {
                     </div>
                     <div className="map">
                         <h3 className="header">Location Map</h3>
-                        <iframe frameborder="0" src="https://www.google.co.uk/maps/embed/v1/place?key=AIzaSyBE9cgGx0m_7Us1rJSjyLUmzEk8TZWnKqY&q={{coords.[0]}},{{coords.[1]}}"></iframe>
+                        <iframe title="googlemaps" frameborder="0" src="https://www.google.co.uk/maps/embed/v1/place?key=AIzaSyBE9cgGx0m_7Us1rJSjyLUmzEk8TZWnKqY&q={{coords.[0]}},{{coords.[1]}}"></iframe>
                     </div>
                 </div>
             </div>

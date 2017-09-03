@@ -14,7 +14,7 @@ class Form extends Component {
     render() {
         return (
             <div className="form-wrapper">
-                <form className="review-form" action="" method="post" role="form">
+                <form className="review-form" action="" method="post">
                     <fieldset>
                         <label>Name</label>
 
