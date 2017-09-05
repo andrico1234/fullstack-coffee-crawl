@@ -1,25 +1,42 @@
+import axios from 'axios';
 import React, {Component} from 'react';
 
 import Header from './location_list_header';
+import LocationListItem from './location_list_item';
 import Sidebar from '../sidebar/sidebar';
-//import fake_homepage from '../../seed/fake_homepage.json';
 
 class LocationList extends Component {
+    constructor(props) {
+        super(props);
+
+        this.getData();
+
+        this.state = {
+            data: {
+                location: []
+            }
+        };
+    };
+
+    getData() {
+        axios.get('http://localhost:5000/api/locations').then((response) => {
+            const {data} = response;
+            this.setState({data});
+        });
+    }
+
     render() {
+        const locationListItems = this.state.data.location.map((uniqueLocations) => {
+            return <LocationListItem key={uniqueLocations._id} location={uniqueLocations}/>
+        });
+
         return (
             <div className="location-wrapper">
                 <Header />
 
                 <div className="location-list-sidebar-wrapper">
                     <div className="list-wrapper">
-                        <div className="error"></div>
-                        {/*begin iteration*/}
-                        <div className="list-item">
-                            <a href="/location/{{_id}}"><h3 className="name">Brockley mess</h3></a>
-                            <p className="address">123 fake street</p>{/*iterate through facilities <span>coffee</span>*/}
-                            <p className="stop">No.1</p>
-                        </div>
-                        {/*end iteration*/}
+                        {locationListItems}
                     </div>
                 </div>
 

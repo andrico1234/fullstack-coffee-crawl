@@ -5,6 +5,12 @@ const reviewController = require('../controllers/reviewsController');
 
 const router = express.Router();
 
+router.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 // locations
 router.post('/locations', locationController.locationsCreate);
 router.get('/locations', locationController.locationsList);
