@@ -1,32 +1,19 @@
-import axios from 'axios';
+import _ from 'lodash';
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
+import {fetchLocation} from '../../actions';
 import Header from './location_list_header';
 import LocationListItem from './location_list_item';
 import Sidebar from '../sidebar/sidebar';
 
 class LocationList extends Component {
-    constructor(props) {
-        super(props);
-
-        this.getData();
-
-        this.state = {
-            data: {
-                location: []
-            }
-        };
-    };
-
-    getData() {
-        axios.get('http://localhost:5000/api/locations').then((response) => {
-            const {data} = response;
-            this.setState({data});
-        });
+    componentDidMount() {
+        this.props.fetchLocation();
     }
 
     render() {
-        const locationListItems = this.state.data.location.map((uniqueLocations) => {
+        const locationListItems = _.map(this.props.data.location, uniqueLocations => {
             return <LocationListItem key={uniqueLocations._id} location={uniqueLocations}/>
         });
 
@@ -46,4 +33,8 @@ class LocationList extends Component {
     }
 }
 
-export default LocationList;
+function mapStateToProps(state) {
+    return {data: state.locationList};
+}
+
+export default connect(mapStateToProps, {fetchLocation})(LocationList);

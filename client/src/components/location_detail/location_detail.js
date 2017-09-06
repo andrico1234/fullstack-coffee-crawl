@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 import Header from './location_detail_header';
-import LocationContainer from './location_detail_location_container';
-import ReviewContainer from './location_detail_review_container';
+import LocationComponent from './location_detail_location_component';
+import ReviewComponent from './location_detail_review_component';
 import Sidebar from '../sidebar/sidebar';
 
 class LocationDetail extends Component {
@@ -10,8 +10,8 @@ class LocationDetail extends Component {
         return (
             <div className="location-detail-wrapper">
                 <Header />
-                <LocationContainer />
-                <ReviewContainer />
+                <LocationComponent />
+                <ReviewComponent />
                 <Sidebar />
             </div>
         );
