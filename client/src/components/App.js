@@ -25,7 +25,7 @@ class App extends Component {
                         <NavBar />
                         <Route path="/about" component={GenericPage} />
                         <Route path="/error" component={ErrorPage} />
-                        <Route path ="/location/review/new" component={Review} />
+                        <Route path ="/location/:id/review/new" component={Review} />
                         <Route exact path="/location/:id" component={LocationDetail} />
                         <Route exact path="/" component={LocationList} />
                         <Footer />
