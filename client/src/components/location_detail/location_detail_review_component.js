@@ -1,25 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ReviewComponent extends Component {
-    render() {
-        return(
-            <div className="review-container">
-                <h3 className="header">Customer Reviews</h3>
-                <a href="/location/{{_id}}/review/new">
-                    <p className="button">Add Review</p>
-                </a>
-                {/*start review for each*/}
-                <div className="review">
-                    <div className="review-info">
-                        <span>Andrico</span> <span>123</span>
-                        <span>123/5</span>
-                    </div>
-                    <p className="comment">Good place</p>
-                </div>
-                {/*end review fro each*/}
-            </div>
-        );
+const ReviewComponent = ({review}) => {
+    if (typeof review === 'undefined') {
+        return <div>Loading...</div>;
     }
-}
+
+    return (
+        <div className="review">
+            <div className="review-info">
+                {/*gotsta add that date once server is fixed*/}
+                <span>{review.reviewerName}</span> <span>{}</span> <span>{review.rating}/5</span>
+            </div>
+            <p className="comment">{typeof review.reviewText === 'undefined' ? '' : review.reviewText}</p>
+        </div>
+    );
+};
 
 export default ReviewComponent;

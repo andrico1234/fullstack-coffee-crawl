@@ -26,7 +26,7 @@ class App extends Component {
                         <Route path="/about" component={GenericPage} />
                         <Route path="/error" component={ErrorPage} />
                         <Route path ="/location/review/new" component={Review} />
-                        <Route exact path="/location" component={LocationDetail} />
+                        <Route exact path="/location/:id" component={LocationDetail} />
                         <Route exact path="/" component={LocationList} />
                         <Footer />
                     </div>
