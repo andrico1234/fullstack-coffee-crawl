@@ -2,6 +2,7 @@
 
 require('./config/config');
 
+const bodyParser = require('body-parser');
 const express = require('express');
 const favicon = require('serve-favicon');
 const path = require('path');
@@ -13,6 +14,8 @@ const {router} = require('./app_api/routes/locations');
 
 let app = express();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api', router);
 app.use(express.static(path.join(__dirname, 'client/build')));
 
