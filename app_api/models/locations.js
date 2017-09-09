@@ -1,3 +1,4 @@
+const format = require('date-fns/format');
 const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({
@@ -11,8 +12,8 @@ const reviewSchema = new mongoose.Schema({
     },
     reviewBody: String,
     reviewDate: {
-        type: Date,
-        "default": Date.now
+        type: String,
+        "default": format(Date.now(), 'MM/DD/YYYY').toString()
     }
 });
 

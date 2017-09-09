@@ -8,8 +8,7 @@ const ReviewComponent = ({review}) => {
     return (
         <div className="review">
             <div className="review-info">
-                {/*gotsta add that date once server is fixed*/}
-                <span>{review.reviewerName}</span> <span>{}</span> <span>{review.rating}/5</span>
+                <span>{review.reviewerName}</span> <span>{review.reviewDate}</span> <span>{review.rating}/5</span>
             </div>
             <p className="comment">{typeof review.reviewText === 'undefined' ? '' : review.reviewText}</p>
         </div>
