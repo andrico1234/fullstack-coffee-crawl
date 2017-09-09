@@ -45,10 +45,16 @@ Sass is the tech of choice for the CSS preprocessing and Webpack is used as the 
 
 ## Future Features
 
-Authentication is still to be added to the project
-Add filtering on homepage
-Add images
-Improved UI
-Modals and Menus
+Authentication
+
 CSS Animations
-Deploy site to Heroku
+
+Deploy to Heroku
+
+Filtering on homepage
+
+Images
+
+Improved UI
+
+Modals and Menus
