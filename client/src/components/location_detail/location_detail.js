@@ -1,15 +1,37 @@
 import _ from 'lodash';
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import ReactModal from 'react-modal';
 
 import {fetchLocation} from '../../actions';
 import LocationComponent from './location_detail_location_component';
 import ReviewComponent from './location_detail_review_component';
+import ReviewFormComponent from '../review_form/review';
 import Sidebar from '../sidebar/sidebar';
 
 class LocationDetail extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            showModal: false
+        };
+
+        this.closeModal = this.closeModal.bind(this);
+        this.openModal = this.openModal.bind(this);
+    };
+
+    closeModal() {
+        this.setState({showModal: false})
+    }
+
     componentDidMount() {
         this.props.fetchLocation(this.props.match.params.id);
+    }
+
+
+    openModal() {
+        this.setState({showModal: true});
     }
 
     render() {
@@ -25,11 +47,13 @@ class LocationDetail extends Component {
 
                 <div className="review-container">
                     <h3 className="header">Customer Reviews</h3>
-                    <a href={`/location/${this.props.match.params.id}/review/new`}>
-                        <p className="button">Add Review</p>
-                    </a>
+                    <p onClick={this.openModal} className="button">Add Review</p>
                     {locationReviews}
                 </div>
+
+                <ReactModal className="modal" isOpen={this.state.showModal} onRequestClose={this.closeModal} contentLabel="Review Modal">
+                    <ReviewFormComponent />
+                </ReactModal>
 
                 <Sidebar />
             </div>

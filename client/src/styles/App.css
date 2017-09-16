@@ -300,60 +300,6 @@ footer {
         .location-wrapper header p {
           margin-left: 0; } }
 
-nav {
-  background-color: #efefef;
-  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.5);
-  padding: 5px 5px 5px 0;
-  position: fixed;
-  width: 100%;
-  z-index: 10; }
-  @media (min-width: 768px) {
-    nav {
-      padding: 10px 5%; } }
-
-.nav-burger-container {
-  position: absolute;
-  top: 17px;
-  right: 35px; }
-  .nav-burger-container .nav-burger {
-    display: inline-block;
-    width: 20px; }
-    @media (min-width: 768px) {
-      .nav-burger-container .nav-burger {
-        display: none; } }
-
-.nav-header {
-  font-family: "Poiret One", "Oxygen", sans-serif;
-  font-size: 1.5em;
-  margin: 10px;
-  width: 50%; }
-  @media (min-width: 768px) {
-    .nav-header {
-      float: left;
-      font-size: 2em;
-      margin: 0;
-      width: 40%; } }
-  .nav-header a {
-    color: #373737; }
-
-.nav-list {
-  display: none;
-  float: left; }
-  @media (min-width: 768px) {
-    .nav-list {
-      display: inline-block;
-      margin: 0;
-      padding: 23px 0 0 0; } }
-  .nav-list li {
-    display: inline;
-    float: left;
-    font-size: 1em;
-    padding: 0 20px;
-    text-transform: uppercase; }
-    .nav-list li p {
-      color: #d66a00;
-      margin: 0; }
-
 .location-detail-wrapper {
   background-color: #efefef;
   padding: 55px 0; }
@@ -361,6 +307,7 @@ nav {
     .location-detail-wrapper {
       padding: 75px 0 60px 0; } }
   .location-detail-wrapper .button {
+    cursor: pointer;
     padding: 12px 0;
     position: absolute;
     right: 20px;
@@ -433,10 +380,7 @@ nav {
 
 .location-review-form-wrapper {
   background-color: #efefef;
-  padding: 55px 0; }
-  @media (min-width: 768px) {
-    .location-review-form-wrapper {
-      padding: 75px 0 60px 0; } }
+  padding: 20px 0; }
   .location-review-form-wrapper button {
     background-color: white;
     display: block;
@@ -446,12 +390,6 @@ nav {
       .location-review-form-wrapper button {
         margin-top: 20px;
         width: 20%; } }
-  .location-review-form-wrapper header {
-    border-bottom: 1px solid #373737;
-    margin-bottom: 10px; }
-    .location-review-form-wrapper header h1 {
-      margin: 18px 0;
-      padding: 0 5%; }
   .location-review-form-wrapper fieldset {
     border: none;
     padding: 15px; }
@@ -537,3 +475,81 @@ nav {
       margin: 0 0 0 auto;
       padding-top: 20px;
       width: 35%; } }
+
+.modal {
+  background: white;
+  border: 1px solid #515151;
+  border-radius: 4px;
+  left: 50%;
+  margin-right: -50%;
+  max-width: 650px;
+  overflow: auto;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%; }
+
+.modal-header {
+  border-bottom: 1px solid #373737;
+  margin-bottom: 10px; }
+  .modal-header h1 {
+    margin: 18px 0;
+    padding: 0 5%; }
+
+.ReactModal__Body--open {
+  overflow: hidden; }
+
+nav {
+  background-color: #efefef;
+  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.5);
+  padding: 5px 5px 5px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 10; }
+  @media (min-width: 768px) {
+    nav {
+      padding: 10px 5%; } }
+
+.nav-burger-container {
+  position: absolute;
+  top: 17px;
+  right: 35px; }
+  .nav-burger-container .nav-burger {
+    display: inline-block;
+    width: 20px; }
+    @media (min-width: 768px) {
+      .nav-burger-container .nav-burger {
+        display: none; } }
+
+.nav-header {
+  font-family: "Poiret One", "Oxygen", sans-serif;
+  font-size: 1.5em;
+  margin: 10px;
+  width: 50%; }
+  @media (min-width: 768px) {
+    .nav-header {
+      float: left;
+      font-size: 2em;
+      margin: 0;
+      width: 40%; } }
+  .nav-header a {
+    color: #373737; }
+
+.nav-list {
+  display: none;
+  float: left; }
+  @media (min-width: 768px) {
+    .nav-list {
+      display: inline-block;
+      margin: 0;
+      padding: 23px 0 0 0; } }
+  .nav-list li {
+    display: inline;
+    float: left;
+    font-size: 1em;
+    padding: 0 20px;
+    text-transform: uppercase; }
+    .nav-list li p {
+      color: #d66a00;
+      margin: 0; }

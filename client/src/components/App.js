@@ -11,7 +11,6 @@ import LocationDetail from './location_detail/location_detail';
 import LocationList from './location_list/location_list';
 import NavBar from './nav_bar/nav_bar';
 import reducers from '../reducers';
-import Review from './review_form/review';
 
 import '../styles/App.css';
 
@@ -25,8 +24,7 @@ class App extends Component {
                         <NavBar />
                         <Route path="/about" component={GenericPage} />
                         <Route path="/error" component={ErrorPage} />
-                        <Route path ="/location/:id/review/new" component={Review} />
-                        <Route exact path="/location/:id" component={LocationDetail} />
+                        <Route path="/location/:id" component={LocationDetail} />
                         <Route exact path="/" component={LocationList} />
                         <Footer />
                     </div>

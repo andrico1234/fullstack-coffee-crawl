@@ -1,5 +1,6 @@
 .location-review-form-wrapper {
-  @include page-wrapper(0);
+  background-color: $background-primary;
+  padding: 20px 0;
 
   button {
     @extend %button;
@@ -11,16 +12,6 @@
     @media (min-width: $breakpoint-medium) {
       margin-top: 20px;
       width: 20%;
-    }
-  }
-
-  header {
-    border-bottom: 1px solid $color-charcoal;
-    margin-bottom: 10px;
-
-    h1 {
-      margin: 18px 0;
-      padding: 0 5%;
     }
   }
 

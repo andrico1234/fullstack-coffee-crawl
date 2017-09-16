@@ -3,6 +3,7 @@
 
   .button {
     @extend %button;
+    cursor: pointer;
     padding: 12px 0;
     position: absolute;
     right: 20px;
