@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, {Component} from 'react';
 
 class Form extends Component {
@@ -6,21 +7,50 @@ class Form extends Component {
 
         this.state = {
             name: '',
-            rating: 0,
-            review: ''
+            rating: 5,
+            review: '',
+            validationHidden: true,
+            validationMessage: ''
         };
+
+        this.postReview = this.postReview.bind(this);
+    }
+
+    postReview(e) {
+        e.preventDefault();
+
+        if (this.state.name === '') {
+            this.setState({
+                validationHidden: false,
+                validationMessage: 'Please enter a name'
+            });
+        } else {
+            axios.post(`http://localhost:5000/api/locations/${this.props.params}/reviews`, {
+                rating: this.state.rating,
+                reviewBody: this.state.review,
+                reviewerName: this.state.name
+            }).then(() => {
+                this.props.close();
+            }).catch(() => {
+                this.setState({
+                    validationHidden: false,
+                    validationMessage: 'Was unable to post message'
+                });
+            });
+        }
     }
 
     render() {
         return (
             <div className="form-wrapper">
-                <form className="review-form" action="" method="post">
+                <p className={`error-message  ${this.state.validationHidden ? 'hidden' : ''}`}>{this.state.validationMessage}</p>
+                <form className="review-form" onSubmit={this.postReview}>
                     <fieldset>
                         <label>Name</label>
 
                         <input onChange={event => this.setState({name: event.target.value})}
                                placeholder="Required" type="text" id="name" name="name"
-                               aria-required="true" pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+"/>
+                               aria-required="true"/>
 
                         <label >Rating</label>
                         <select onChange={event => this.setState({rating: event.target.value})}

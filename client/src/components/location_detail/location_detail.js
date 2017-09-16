@@ -22,13 +22,12 @@ class LocationDetail extends Component {
     };
 
     closeModal() {
-        this.setState({showModal: false})
+        this.setState({showModal: false});
     }
 
     componentDidMount() {
         this.props.fetchLocation(this.props.match.params.id);
     }
-
 
     openModal() {
         this.setState({showModal: true});
@@ -52,7 +51,7 @@ class LocationDetail extends Component {
                 </div>
 
                 <ReactModal className="modal" isOpen={this.state.showModal} onRequestClose={this.closeModal} contentLabel="Review Modal">
-                    <ReviewFormComponent />
+                    <ReviewFormComponent close={this.closeModal} params={this.props.match.params.id} />
                 </ReactModal>
 
                 <Sidebar />
