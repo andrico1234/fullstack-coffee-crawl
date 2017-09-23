@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import {Provider} from 'react-redux';
 import promise from 'redux-promise';
@@ -22,10 +22,12 @@ class App extends Component {
                 <Router>
                     <div className="App">
                         <NavBar />
-                        <Route path="/about" component={GenericPage} />
-                        <Route path="/error" component={ErrorPage} />
-                        <Route path="/location/:id" component={LocationDetail} />
-                        <Route exact path="/" component={LocationList} />
+                        <Switch>
+                            <Route path="/about" component={GenericPage} />
+                            <Route path="/location/:id" component={LocationDetail} />
+                            <Route exact path="/" component={LocationList} />
+                            <Route component={ErrorPage}/>
+                        </Switch>
                         <Footer />
                     </div>
                 </Router>
