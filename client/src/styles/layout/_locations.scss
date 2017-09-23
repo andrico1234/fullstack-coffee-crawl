@@ -9,6 +9,28 @@
     margin: 0 5%;
   }
 
+  .search-bar-container {
+    text-align: center;
+
+    @media (min-width: $breakpoint-medium) {
+      text-align: inherit;
+    }
+
+    input {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 5%;
+      outline: none;
+      width: 80%;
+
+      @media (min-width: $breakpoint-medium) {
+        margin-left: 5%;
+        padding-left: 15px;
+        width: 250px;
+      }
+    }
+  }
+
   header {
     @include responsive-ratio(4, 3);
     //background: url("../../images/coffee-shop-mobile.png") round;

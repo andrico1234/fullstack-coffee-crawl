@@ -275,6 +275,22 @@ footer {
       padding: 0 0 60px 0; } }
   .location-wrapper .location-list-sidebar-wrapper {
     margin: 0 5%; }
+  .location-wrapper .search-bar-container {
+    text-align: center; }
+    @media (min-width: 768px) {
+      .location-wrapper .search-bar-container {
+        text-align: inherit; } }
+    .location-wrapper .search-bar-container input {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 5%;
+      outline: none;
+      width: 80%; }
+      @media (min-width: 768px) {
+        .location-wrapper .search-bar-container input {
+          margin-left: 5%;
+          padding-left: 15px;
+          width: 250px; } }
   .location-wrapper header {
     padding-top: 75%;
     background-color: #373737;
