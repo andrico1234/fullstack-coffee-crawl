@@ -1,0 +1,31 @@
+#mobile-navbar-wrapper {
+  position: fixed;
+  right: 0;
+  top: 40px;
+  width: 150px;
+  z-index: -1;
+}
+
+.mobile-nav-list {
+  display: inline-block;
+  float: left;
+  list-style: none;
+  padding: 0;
+  width: 150px;
+
+  @media (min-width: $breakpoint-medium) {
+    display: none;
+  }
+
+  li {
+    border-top: 1px solid darken($background-primary, 20%);
+    font-size: $font-size-medium;
+    padding: 15px 20px;
+    text-transform: uppercase;
+
+    p {
+      color: $font-color-bright;
+      margin: 0;
+    }
+  }
+}

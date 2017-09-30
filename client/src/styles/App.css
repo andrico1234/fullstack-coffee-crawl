@@ -211,7 +211,13 @@ body {
   background-color: #efefef;
   box-sizing: border-box;
   font: 14px "Montserrat", sans-serif;
-  min-height: 100vh; }
+  left: 0;
+  min-height: 100vh;
+  position: relative;
+  transition: left 0.4s cubic-bezier(0.22, 0.61, 0.36, 1); }
+  body.active {
+    border-right: 1px solid #202930;
+    left: -150px; }
 
 a {
   color: #d66a00;
@@ -499,6 +505,31 @@ footer {
       margin: 0 0 0 auto;
       padding-top: 20px;
       width: 35%; } }
+
+#mobile-navbar-wrapper {
+  position: fixed;
+  right: 0;
+  top: 40px;
+  width: 150px;
+  z-index: -1; }
+
+.mobile-nav-list {
+  display: inline-block;
+  float: left;
+  list-style: none;
+  padding: 0;
+  width: 150px; }
+  @media (min-width: 768px) {
+    .mobile-nav-list {
+      display: none; } }
+  .mobile-nav-list li {
+    border-top: 1px solid #bcbcbc;
+    font-size: 1em;
+    padding: 15px 20px;
+    text-transform: uppercase; }
+    .mobile-nav-list li p {
+      color: #d66a00;
+      margin: 0; }
 
 .modal {
   background: white;

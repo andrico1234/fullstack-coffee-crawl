@@ -2,7 +2,15 @@ body {
   background-color: $background-primary;
   box-sizing: border-box;
   font: 14px $font-family-text-secondary;
+  left: 0;
   min-height: 100vh;
+  position: relative;
+  transition: left 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  &.active {
+    border-right: 1px solid $font-color-secondary;
+    left: -150px;
+  }
 }
 
 a {

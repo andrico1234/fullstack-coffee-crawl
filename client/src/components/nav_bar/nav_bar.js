@@ -2,6 +2,20 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const NavBar = () => {
+    const bodyEl = document.getElementById('body');
+
+    const burgerClick = () => {
+        bodyEl.className = bodyEl.className === 'active' ? '' : 'active';
+    };
+
+    const removeClass = () => {
+        if (bodyEl.classList.contains('active')) {
+            bodyEl.classList.remove('active');
+        }
+    };
+
+    window.addEventListener('resize', removeClass);
+
     return (
         <nav>
             <h3 className="nav-header">
@@ -18,7 +32,7 @@ const NavBar = () => {
                     <Link to="/about">About</Link>
                 </li>
             </ul>
-            <div className="nav-burger-container" data-toggle="collapse" data-target=".navbar-main">
+            <div className="nav-burger-container" onClick={burgerClick} data-toggle="collapse" data-target=".navbar-main">
                 <img className="nav-burger" alt="burger menu" src="/images/burger-menu.svg"/>
             </div>
         </nav>
