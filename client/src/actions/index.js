@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const FETCH_LOCATION_LIST = 'fetch_location_list';
 export const FETCH_SINGLE_LOCATION = 'fetch_single_location';
+export const POST_SINGLE_REVIEW = 'post_single_review';
 
 const ROOT_URL = 'http://localhost:5000/api';
 
@@ -19,6 +20,15 @@ export function fetchLocation(id) {
 
     return {
         type: FETCH_SINGLE_LOCATION,
+        payload: request
+    }
+}
+
+export function postReview(review, id) {
+    const request = axios.post(`${ROOT_URL}/locations/${id}/reviews`, review);
+
+    return {
+        type: POST_SINGLE_REVIEW,
         payload: request
     }
 }

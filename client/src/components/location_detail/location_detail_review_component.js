@@ -10,7 +10,7 @@ const ReviewComponent = ({review}) => {
             <div className="review-info">
                 <span>{review.reviewerName}</span> <span>{review.reviewDate}</span> <span>{review.rating}/5</span>
             </div>
-            <p className="comment">{typeof review.reviewText === 'undefined' ? '' : review.reviewText}</p>
+            <p className="comment">{typeof review.reviewBody === 'undefined' ? '' : review.reviewBody}</p>
         </div>
     );
 };

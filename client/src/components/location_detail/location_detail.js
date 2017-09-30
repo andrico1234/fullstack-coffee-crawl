@@ -61,7 +61,7 @@ class LocationDetail extends Component {
 }
 
 function mapStateToProps(state) {
-    return {data: state.singleLocation};
+    return {data: state.locations};
 }
 
 export default connect(mapStateToProps, {fetchLocation})(LocationDetail);

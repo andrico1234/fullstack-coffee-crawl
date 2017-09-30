@@ -1,5 +1,7 @@
-import axios from 'axios';
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
+import {postReview} from '../../actions';
 
 class Form extends Component {
     constructor(props) {
@@ -25,12 +27,14 @@ class Form extends Component {
                 validationMessage: 'Please enter a name'
             });
         } else {
-            axios.post(`http://localhost:5000/api/locations/${this.props.params}/reviews`, {
+            const values = {
                 rating: this.state.rating,
                 reviewBody: this.state.review,
                 reviewerName: this.state.name
-            }).then(() => {
-                this.props.close();
+            };
+
+            this.props.postReview(values, this.props.params).then(() => {
+                window.location = `/location/${this.props.params}`;
             }).catch(() => {
                 this.setState({
                     validationHidden: false,
@@ -52,7 +56,7 @@ class Form extends Component {
                                placeholder="Required" type="text" id="name" name="name"
                                aria-required="true"/>
 
-                        <label >Rating</label>
+                        <label>Rating</label>
                         <select onChange={event => this.setState({rating: event.target.value})}
                                 name="rating" id="rating">
                             <option value="5">5</option>
@@ -73,4 +77,8 @@ class Form extends Component {
     }
 }
 
-export default Form;
+function mapStateToProps(state) {
+    return {data: state.reviews}
+}
+
+export default connect(mapStateToProps, {postReview})(Form);

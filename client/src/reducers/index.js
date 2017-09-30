@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
 
-import LocationListReducer from './reducer_location_list';
-import SingleLocationReducer from './reducer_one_location';
+import LocationReducer from './reducer_location';
+import ReviewReducer from './reducer_reviews';
 
 const rootReducer = combineReducers({
-    locationList: LocationListReducer,
-    singleLocation: SingleLocationReducer
+    locations: LocationReducer,
+    reviews: ReviewReducer
 });
 
 export default rootReducer;

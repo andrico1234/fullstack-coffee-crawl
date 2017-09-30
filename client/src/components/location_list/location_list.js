@@ -62,7 +62,7 @@ class LocationList extends Component {
 }
 
 function mapStateToProps(state) {
-    return {data: state.locationList};
+    return {data: state.locations};
 }
 
 export default connect(mapStateToProps, {fetchLocations})(LocationList);

@@ -1,8 +1,8 @@
-import {FETCH_LOCATION_LIST} from '../actions';
+import {POST_SINGLE_REVIEW} from '../actions/index';
 
 export default function(state = {}, action) {
     switch (action.type) {
-        case FETCH_LOCATION_LIST:
+        case POST_SINGLE_REVIEW:
             return action.payload.data;
         default:
             return state;
