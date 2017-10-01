@@ -243,14 +243,45 @@ footer {
   background-color: #373737;
   bottom: 0;
   color: #efefef;
+  text-align: center;
   position: static; }
   @media (min-width: 768px) {
     footer {
-      padding: 10px 5%; } }
+      padding: 10px 25px;
+      text-align: left; } }
 
 .footer-container p {
   color: #efefef;
-  padding: 5%; }
+  display: inline-block;
+  padding-bottom: 15px;
+  padding-right: 20px;
+  padding-top: 25px; }
+  @media (min-width: 768px) {
+    .footer-container p {
+      padding-bottom: 25px;
+      padding-left: 17px; } }
+  @media (min-width: 1024px) {
+    .footer-container p {
+      width: 17%; } }
+
+.logo-container {
+  display: inline-block;
+  padding-bottom: 5px;
+  text-align: center;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .logo-container {
+      position: relative;
+      top: 8px;
+      width: auto; } }
+  @media (min-width: 1024px) {
+    .logo-container {
+      text-align: right;
+      width: 80%; } }
+
+.logo {
+  padding: 0 10px;
+  width: 30px; }
 
 .generic-page-wrapper {
   background-color: #efefef;

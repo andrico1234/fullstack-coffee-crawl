@@ -2,14 +2,56 @@ footer {
   background-color: $background-dark;
   bottom: 0;
   color: $font-color-light;
+  text-align: center;
   position: static;
 
   @media (min-width: $breakpoint-medium) {
-    padding: 10px 5%;
+    padding: 10px 25px;
+    text-align: left;
   }
 }
 
 .footer-container p {
   color: $font-color-light;
-  padding: 5%;
+  display: inline-block;
+
+  padding: {
+    bottom: 15px;
+    right: 20px;
+    top: 25px;
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    padding: {
+      bottom: 25px;
+      left: 17px;
+    }
+  }
+
+  @media (min-width: $breakpoint-large) {
+    width: 17%;
+  }
+}
+
+.logo-container {
+  display: inline-block;
+  padding-bottom: 5px;
+  text-align: center;
+  width: 100%;
+
+  @media (min-width: $breakpoint-medium) {
+    position: relative;
+    top: 8px;
+    width: auto;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    text-align: right;
+    width: 80%;
+  }
+}
+
+.logo {
+  padding: 0 10px;
+  width: 30px;
 }
