@@ -2,7 +2,13 @@ import React from 'react';
 
 const LocationComponent = ({location}) => {
     if (typeof location.address === 'undefined') {
-        return <div>Loading...</div>;
+        return (
+            <div>
+                <header>
+                    <h1>Loading</h1>
+                </header>
+            </div>
+        )
     }
 
     return (

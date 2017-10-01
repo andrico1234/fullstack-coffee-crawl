@@ -212,7 +212,6 @@ body {
   box-sizing: border-box;
   font: 14px "Montserrat", sans-serif;
   left: 0;
-  min-height: 100vh;
   position: relative;
   transition: left 0.4s cubic-bezier(0.22, 0.61, 0.36, 1); }
   body.active {
@@ -277,7 +276,7 @@ footer {
   @media (min-width: 1024px) {
     .logo-container {
       text-align: right;
-      width: 80%; } }
+      width: 79%; } }
 
 .logo {
   padding: 0 10px;
