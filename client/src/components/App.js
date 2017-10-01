@@ -18,6 +18,13 @@ import '../styles/App.css';
 class App extends Component {
     render() {
         const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+
+        const initialise = () => {
+            document.getElementsByClassName('shell')[0].style.display = 'none';
+        };
+
+        initialise();
+
         return (
             <Provider store={createStoreWithMiddleware(reducers)}>
                 <Router>
