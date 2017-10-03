@@ -1,7 +1,7 @@
 {
   "development": {
     "PORT": 5000,
-    "MONGODB_URI": "mongodb://localhost:27017/cafecrawl"
+    "MONGODB_URI": "mongodb://andrico1234:123123@ds145293.mlab.com:45293/coffeecrawl"
   },
   "test": {
     "PORT": 6000,
