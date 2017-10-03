@@ -35,7 +35,7 @@ class App extends Component {
                             <Route path="/about" component={GenericPage} />
                             <Route path="/location/:id" component={LocationDetail} />
                             <Route exact path="/" component={LocationList} />
-                            {/*<Route component={ErrorPage}/>*/}
+                            <Route component={ErrorPage}/>
                         </Switch>
                         <Footer />
                     </div>
