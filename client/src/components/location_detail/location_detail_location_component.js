@@ -35,7 +35,7 @@ const LocationComponent = ({location}) => {
                     </div>
                     <div className="map">
                         <h3 className="header">Location Map</h3>
-                        <iframe title="googlemaps" frameBorder="0" src={`https://www.google.co.uk/maps/embed/v1/place?key=AIzaSyBE9cgGx0m_7Us1rJSjyLUmzEk8TZWnKqY&q=${location.coords[0]},${location.coords[1]}`}></iframe>
+                        <iframe title="googlemaps" frameBorder="0" src={`https://www.google.co.uk/maps/embed/v1/place?key=AIzaSyBE9cgGx0m_7Us1rJSjyLUmzEk8TZWnKqY&q=${location.title}/${location.coords[0]},${location.coords[1]}`}></iframe>
                     </div>
                 </div>
             </div>

@@ -39,6 +39,8 @@ class LocationList extends Component {
         });
     }
 
+    sidebarContent = 'Brockley is known for it’s incredibly cafes and restaurants. Spend an afternoon discovering some of the local establishments, soaking in the personality and excellent coffee.';
+
     render() {
         const locationListItems = _.map(this.state.returnLocations, (uniqueLocations) => {
             return <LocationListItem key={uniqueLocations._id} location={uniqueLocations}/>
@@ -55,7 +57,7 @@ class LocationList extends Component {
                         {locationListItems}
                     </div>
                 </div>
-                <Sidebar />
+                <Sidebar content={this.sidebarContent}/>
             </div>
         );
     }

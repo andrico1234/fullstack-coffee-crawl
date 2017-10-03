@@ -54,7 +54,7 @@ class LocationDetail extends Component {
                     <ReviewFormComponent close={this.closeModal} params={this.props.match.params.id} />
                 </ReactModal>
 
-                <Sidebar />
+                <Sidebar content={locationDetails.sidebar} />
             </div>
         );
     };

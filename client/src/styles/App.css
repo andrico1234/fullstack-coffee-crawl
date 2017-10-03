@@ -490,7 +490,7 @@ footer {
   @media (min-width: 768px) {
     .location-list-sidebar-wrapper .list-wrapper {
       float: left;
-      width: 60%; } }
+      width: 55%; } }
 
 .location-list-sidebar-wrapper .list-item h3 {
   font-family: "Poiret One", "Oxygen", sans-serif;

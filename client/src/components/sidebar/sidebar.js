@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
     return (
         <div className="sidebar">
-            <p className="sidebar-content">more deets</p>
+            <p className="sidebar-content">{props.content}</p>
         </div>
     );
 };
