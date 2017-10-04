@@ -4,7 +4,7 @@ export const FETCH_LOCATION_LIST = 'fetch_location_list';
 export const FETCH_SINGLE_LOCATION = 'fetch_single_location';
 export const POST_SINGLE_REVIEW = 'post_single_review';
 
-const ROOT_URL = 'https://lit-lake-64895.herokuapp.com/api';
+const ROOT_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/api' : 'https://lit-lake-64895.herokuapp.com/api';
 
 export function fetchLocations() {
     const request = axios.get(`${ROOT_URL}/locations`);
