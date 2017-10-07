@@ -14,7 +14,7 @@
     "node": "~8.4.0",
     "npm": "~5.3.0"
   },
-  "proxy": "http://www.brockleycafecrawl.co.uk/",
+  "proxy": "https://brockleycafecrawl.herokuapp.com/",
   "author": "",
   "license": "ISC",
   "dependencies": {
