@@ -23,6 +23,17 @@
   position: relative;
 }
 
+%modal {
+  background: $background-primary;
+  border-radius: 4px;
+  left: 50%;
+  margin-right: -50%;
+  outline: none;
+  overflow: auto;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
 @mixin page-wrapper($paddingSides) {
   background-color: $background-primary;
   padding: 55px $paddingSides;

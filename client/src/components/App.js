@@ -9,7 +9,6 @@ import Footer from './footer/footer';
 import GenericPage from './generic_page/generic_page';
 import LocationDetail from './location_detail/location_detail';
 import LocationList from './location_list/location_list';
-import MobileNavBar from './nav_bar/mobile_nav_bar';
 import NavBar from './nav_bar/nav_bar';
 import reducers from '../reducers';
 
@@ -30,7 +29,6 @@ class App extends Component {
                 <Router>
                     <div className="App">
                         <NavBar />
-                        <MobileNavBar />
                         <Switch>
                             <Route path="/about" component={GenericPage} />
                             <Route path="/location/:id" component={LocationDetail} />

@@ -188,7 +188,7 @@ table {
   border-spacing: 0; }
 
 .location-detail-wrapper .button, .location-review-form-wrapper button {
-  background-color: #efefef;
+  background-color: #faf7f6;
   border: none;
   border-radius: 2px;
   color: #373737;
@@ -202,24 +202,47 @@ table {
   display: table; }
 
 .location-detail-wrapper .facilities, .location-detail-wrapper .map, .location-detail-wrapper .opening-hours, .location-detail-wrapper .review-container, .location-list-sidebar-wrapper .list-item {
-  background-color: #e2e2e2;
+  background-color: #f1e8e6;
   margin: 10px 0;
   padding: 5px 0 10px 0;
   position: relative; }
 
+.modal, .navModal {
+  background: #faf7f6;
+  border-radius: 4px;
+  left: 50%;
+  margin-right: -50%;
+  outline: none;
+  overflow: auto;
+  position: absolute;
+  transform: translate(-50%, -50%); }
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    top: 140px; }
+  to {
+    opacity: 1;
+    top: 103px; } }
+
+@keyframes slideOutDown {
+  from {
+    opacity: 1;
+    top: 103px; }
+  to {
+    opacity: 0;
+    top: 120px; } }
+
 body {
-  background-color: #efefef;
+  background-color: #faf7f6;
   box-sizing: border-box;
   font: 14px "Montserrat", sans-serif;
   left: 0;
-  position: relative;
-  transition: left 0.4s cubic-bezier(0.22, 0.61, 0.36, 1); }
-  body.active {
-    border-right: 1px solid #202930;
-    left: -150px; }
+  position: relative; }
 
 a {
   color: #d66a00;
+  font-weight: 200;
   text-decoration: none; }
 
 h1 {
@@ -238,10 +261,13 @@ p, span {
   color: #202930;
   margin: 0; }
 
+.ReactModal__Body--open {
+  overflow: hidden; }
+
 footer {
   background-color: #373737;
   bottom: 0;
-  color: #efefef;
+  color: #faf7f6;
   text-align: center;
   position: static; }
   @media (min-width: 768px) {
@@ -250,7 +276,7 @@ footer {
       text-align: left; } }
 
 .footer-container p {
-  color: #efefef;
+  color: #faf7f6;
   display: inline-block;
   padding-bottom: 15px;
   padding-right: 20px;
@@ -283,7 +309,7 @@ footer {
   width: 30px; }
 
 .generic-page-wrapper {
-  background-color: #efefef;
+  background-color: #faf7f6;
   padding: 55px 10px; }
   @media (min-width: 768px) {
     .generic-page-wrapper {
@@ -301,7 +327,7 @@ footer {
     padding: 0 15%; } }
 
 .location-wrapper {
-  background-color: #efefef;
+  background-color: #faf7f6;
   padding: 55px 0; }
   @media (min-width: 768px) {
     .location-wrapper {
@@ -337,14 +363,14 @@ footer {
       .location-wrapper header {
         padding-top: 56.25%; } }
     .location-wrapper header h1 {
-      color: #efefef;
+      color: #faf7f6;
       font-size: 3em;
       margin: 0;
       position: absolute;
       top: 50%;
       width: 100%; }
     .location-wrapper header p {
-      color: #efefef;
+      color: #faf7f6;
       position: absolute;
       top: 70%;
       width: 100%; }
@@ -353,7 +379,7 @@ footer {
           margin-left: 0; } }
 
 .location-detail-wrapper {
-  background-color: #efefef;
+  background-color: #faf7f6;
   padding: 55px 0; }
   @media (min-width: 768px) {
     .location-detail-wrapper {
@@ -376,7 +402,7 @@ footer {
   .location-detail-wrapper .facilities h3, .location-detail-wrapper .map h3, .location-detail-wrapper .opening-hours h3, .location-detail-wrapper .review-container h3 {
     padding-left: 10px; }
   .location-detail-wrapper .facilities span {
-    background-color: #efefef;
+    background-color: #faf7f6;
     border-radius: 15px;
     display: inline-block;
     font-weight: 600;
@@ -406,11 +432,11 @@ footer {
   .location-detail-wrapper .review {
     padding: 10px 0; }
     .location-detail-wrapper .review:nth-child(even) {
-      background-color: #e2e2e2; }
+      background-color: #f1e8e6; }
       .location-detail-wrapper .review:nth-child(even) p {
         color: #373737; }
     .location-detail-wrapper .review:nth-child(odd) {
-      background-color: #efefef; }
+      background-color: #faf7f6; }
   .location-detail-wrapper .review-container {
     margin: 10px auto 20px auto;
     padding-bottom: 0;
@@ -431,7 +457,7 @@ footer {
     height: 40px; }
 
 .location-review-form-wrapper {
-  background-color: #efefef;
+  background-color: #faf7f6;
   padding: 20px 0; }
   .location-review-form-wrapper button {
     background-color: white;
@@ -502,7 +528,7 @@ footer {
   padding-bottom: 5px; }
 
 .location-list-sidebar-wrapper .list-item span {
-  background-color: #efefef;
+  background-color: #faf7f6;
   border-radius: 15px;
   display: inline-block;
   font-weight: 600;
@@ -522,7 +548,7 @@ footer {
   font-weight: 600;
   margin-left: 5px;
   padding: 5px;
-  color: #efefef;
+  color: #faf7f6;
   position: absolute;
   right: 10px;
   top: 19px; }
@@ -536,42 +562,10 @@ footer {
       padding-top: 20px;
       width: 35%; } }
 
-#mobile-navbar-wrapper {
-  position: fixed;
-  right: 0;
-  top: 40px;
-  width: 150px;
-  z-index: -1; }
-
-.mobile-nav-list {
-  display: inline-block;
-  float: left;
-  list-style: none;
-  padding: 0;
-  width: 150px; }
-  @media (min-width: 768px) {
-    .mobile-nav-list {
-      display: none; } }
-  .mobile-nav-list li {
-    border-top: 1px solid #bcbcbc;
-    font-size: 1em;
-    padding: 15px 20px;
-    text-transform: uppercase; }
-    .mobile-nav-list li p {
-      color: #d66a00;
-      margin: 0; }
-
 .modal {
-  background: white;
-  border-radius: 4px;
-  left: 50%;
-  margin-right: -50%;
   max-width: 650px;
-  overflow: auto;
   padding: 20px;
-  position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
   width: 60%; }
 
 .modal-header {
@@ -581,13 +575,23 @@ footer {
     margin: 18px 0;
     padding: 0 5%; }
 
-.ReactModal__Body--open {
-  overflow: hidden; }
+.modal {
+  max-width: 650px;
+  padding: 20px;
+  top: 50%;
+  width: 60%; }
+
+.modal-header {
+  border-bottom: 1px solid #373737;
+  margin-bottom: 10px; }
+  .modal-header h1 {
+    margin: 18px 0;
+    padding: 0 5%; }
 
 nav {
-  background-color: #efefef;
-  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.5);
-  padding: 5px 5px 5px 0;
+  background-color: #faf7f6;
+  box-shadow: -3px 4px 10px -2px rgba(0, 0, 0, 0.5);
+  padding: 5px 0;
   position: fixed;
   width: 100%;
   z-index: 10; }
@@ -597,11 +601,11 @@ nav {
 
 .nav-burger-container {
   position: absolute;
-  top: 17px;
+  top: 14px;
   right: 35px; }
   .nav-burger-container .nav-burger {
     display: inline-block;
-    width: 20px; }
+    width: 25px; }
     @media (min-width: 768px) {
       .nav-burger-container .nav-burger {
         display: none; } }
@@ -635,5 +639,42 @@ nav {
     padding: 0 20px;
     text-transform: uppercase; }
     .nav-list li p {
+      color: #d66a00;
+      margin: 0; }
+
+.navModal {
+  box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.5);
+  padding: 0;
+  top: 103px;
+  width: 95%; }
+  .navModal.move-in {
+    animation: slideInUp 0.2s 1; }
+  .navModal.move-out {
+    animation: slideOutDown 0.2s 1; }
+
+.navModal-overlay {
+  background-color: transparent;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0; }
+
+.mobile-nav-list {
+  display: inline-block;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+  .mobile-nav-list Link, .mobile-nav-list a {
+    border-top: 1px solid #eaeaea;
+    display: block;
+    font-size: 1em;
+    padding: 5px 40px; }
+    .mobile-nav-list Link:hover, .mobile-nav-list a:hover {
+      background-color: #e8dad5;
+      cursor: pointer; }
+    .mobile-nav-list Link p, .mobile-nav-list a p {
       color: #d66a00;
       margin: 0; }

@@ -1,0 +1,51 @@
+.navModal {
+  @extend %modal;
+  box-shadow: 0 0 13px 1px rgba(0,0,0,0.5);
+  padding: 0;
+  top: 103px;
+  width: 95%;
+
+  &.move-in {
+    animation: slideInUp 0.2s 1;
+  }
+
+  &.move-out {
+    animation: slideOutDown 0.2s 1;
+
+  }
+}
+
+.navModal-overlay {
+  background-color: transparent;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.mobile-nav-list {
+  display: inline-block;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  Link, a {
+    border-top: 1px solid lighten($border-color-primary, 70%);
+    display: block;
+    font-size: $font-size-medium;
+    padding: 5px 40px;
+
+    &:hover {
+      background-color: darken($background-primary, 10%);
+      cursor: pointer;
+    }
+
+    p {
+      color: $font-color-bright;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@keyframes slideInUp {
+   from {
+     opacity: 0;
+     top: 140px;
+   }
+
+   to {
+     opacity: 1;
+     top: 103px;
+   }
+ }
+
+@keyframes slideOutDown {
+  from {
+    opacity: 1;
+    top: 103px;
+  }
+
+  to {
+    opacity: 0;
+    top: 120px;
+  }
+}

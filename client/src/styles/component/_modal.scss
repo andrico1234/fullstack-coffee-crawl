@@ -1,14 +1,8 @@
 .modal {
-  background: white;
-  border-radius: 4px;
-  left: 50%;
-  margin-right: -50%;
+  @extend %modal;
   max-width: 650px;
-  overflow: auto;
   padding: 20px;
-  position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
   width: 60%;
 }
 
@@ -21,8 +15,4 @@
     margin: 18px 0;
     padding: 0 5%;
   }
-}
-
-.ReactModal__Body--open {
-  overflow: hidden;
 }
