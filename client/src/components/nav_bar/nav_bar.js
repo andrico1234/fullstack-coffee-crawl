@@ -18,11 +18,13 @@ class NavBar extends Component {
     };
 
     closeModal() {
-        const navModal = document.getElementsByClassName('navModal')[0];
-        navModal.className += ' move-out ';
-        navModal.addEventListener('animationend', () => {
-            this.setState({showModal: false})
-        });
+        if (this.state.showModal) {
+            const navModal = document.getElementsByClassName('navModal')[0];
+            navModal.className += ' move-out ';
+            navModal.addEventListener('animationend', () => {
+                this.setState({showModal: false})
+            });
+        }
     }
 
     openModal() {
