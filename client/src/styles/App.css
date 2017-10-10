@@ -217,6 +217,20 @@ table {
   position: absolute;
   transform: translate(-50%, -50%); }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes pulse {
+  from {
+    opacity: 0.5; }
+  50% {
+    opacity: 1; }
+  to {
+    opacity: 0.5; } }
+
 @keyframes slideInUp {
   from {
     opacity: 0;
@@ -343,16 +357,24 @@ footer {
       .location-wrapper .search-bar-container {
         text-align: inherit; } }
     .location-wrapper .search-bar-container input {
+      border: 1px solid #b7b7b7;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
       display: inline-block;
       margin-top: 15px;
-      padding: 10px 5%;
       outline: none;
+      padding: 10px 5%;
+      transition: width 0.2s ease-in, border linear 0.2s, box-shadow linear 0.2s;
       width: 80%; }
+      .location-wrapper .search-bar-container input:focus {
+        border: 1px solid #d66a00;
+        box-shadow: 0 0 5px 2px rgba(214, 106, 0, 0.5); }
       @media (min-width: 768px) {
         .location-wrapper .search-bar-container input {
           margin-left: 5%;
           padding-left: 15px;
-          width: 250px; } }
+          width: 180px; }
+          .location-wrapper .search-bar-container input:focus {
+            width: 280px; } }
   .location-wrapper header {
     padding-top: 75%;
     background-color: #373737;
@@ -362,6 +384,9 @@ footer {
     @media (min-width: 768px) {
       .location-wrapper header {
         padding-top: 56.25%; } }
+    @media (min-width: 1024px) {
+      .location-wrapper header {
+        padding-top: 43.75%; } }
     .location-wrapper header h1 {
       color: #faf7f6;
       font-size: 3em;
@@ -377,6 +402,14 @@ footer {
       @media (min-width: 768px) {
         .location-wrapper header p {
           margin-left: 0; } }
+
+.list-item.waiting {
+  animation: pulse linear 1.5s infinite both; }
+
+.loading {
+  height: 17px;
+  position: relative;
+  width: 17px; }
 
 .location-detail-wrapper {
   background-color: #faf7f6;
@@ -510,33 +543,40 @@ footer {
     .location-review-form-wrapper .error-message.hidden {
       display: none; }
 
+.location-content-wrapper {
+  max-width: 1280px; }
+  @media (min-width: 768px) {
+    .location-content-wrapper {
+      margin: 0 auto; } }
+
 .location-list-sidebar-wrapper .list-wrapper {
   margin: 15px 0;
   width: 100%; }
   @media (min-width: 768px) {
     .location-list-sidebar-wrapper .list-wrapper {
       float: left;
+      max-width: 900px;
       width: 55%; } }
 
-.location-list-sidebar-wrapper .list-item h3 {
-  font-family: "Poiret One", "Oxygen", sans-serif;
-  font-size: 1.5em;
-  margin: 10px 0;
-  padding-left: 10px; }
-
-.location-list-sidebar-wrapper .list-item p {
-  padding-bottom: 5px; }
-
-.location-list-sidebar-wrapper .list-item span {
-  background-color: #faf7f6;
-  border-radius: 15px;
-  display: inline-block;
-  font-weight: 600;
-  margin-left: 5px;
-  padding: 5px;
-  color: #6a6a6a; }
-  .location-list-sidebar-wrapper .list-item span:first-of-type {
-    margin-left: 10px; }
+.location-list-sidebar-wrapper .list-item {
+  animation: fadeIn 0.2s ease-in; }
+  .location-list-sidebar-wrapper .list-item h3 {
+    font-family: "Poiret One", "Oxygen", sans-serif;
+    font-size: 1.5em;
+    margin: 10px 0;
+    padding-left: 10px; }
+  .location-list-sidebar-wrapper .list-item p {
+    padding-bottom: 5px; }
+  .location-list-sidebar-wrapper .list-item span {
+    background-color: #faf7f6;
+    border-radius: 15px;
+    display: inline-block;
+    font-weight: 600;
+    margin-left: 5px;
+    padding: 5px;
+    color: #6a6a6a; }
+    .location-list-sidebar-wrapper .list-item span:first-of-type {
+      margin-left: 10px; }
 
 .location-list-sidebar-wrapper .address, .location-list-sidebar-wrapper .facilities {
   padding-left: 10px; }
@@ -554,12 +594,12 @@ footer {
   top: 19px; }
 
 .sidebar {
-  font-size: 1.5em;
+  font-size: 1em;
   padding: 0 5%; }
   @media (min-width: 768px) {
     .sidebar {
-      margin: 0 0 0 auto;
-      padding-top: 20px;
+      font-size: 1.5em;
+      margin: 20px 0 0 auto;
       width: 35%; } }
 
 .modal {

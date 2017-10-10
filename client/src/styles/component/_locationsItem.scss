@@ -1,3 +1,11 @@
+.location-content-wrapper {
+  max-width: 1280px;
+
+  @media (min-width: $breakpoint-medium) {
+    margin: 0 auto;
+  }
+}
+
 .location-list-sidebar-wrapper {
   .list-wrapper {
     margin: 15px 0;
@@ -5,12 +13,14 @@
 
     @media (min-width: $breakpoint-medium) {
       float: left;
+      max-width: 900px;
       width: 55%;
     }
   }
 
   .list-item {
     @extend %item-background;
+    animation: fadeIn 0.2s ease-in;
 
     h3 {
       font: {

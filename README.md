@@ -9,6 +9,7 @@
 ## What Is This?
 
 A list of the best coffee shops in Brockley (South-East London). A project that was created to get used to creating full-stack apps.
+It has recently been deployed to live (via Heroku) and can be accessed at http://brockleycafecrawl.co.uk
 
 ## The Technology Used
 
@@ -46,10 +47,6 @@ Sass is the tech of choice for the CSS preprocessing and Webpack is used as the 
 ## Future Features
 
 Authentication
-
-CSS Animations
-
-Deploy to Heroku
 
 Images
 
