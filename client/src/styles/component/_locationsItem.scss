@@ -20,29 +20,9 @@
 
   .list-item {
     @extend %item-background;
+    @extend %item-card;
+
     animation: fadeIn 0.2s ease-in;
-
-    h3 {
-      font: {
-        family: $font-family-header;
-        size: $font-size-large;
-      }
-      margin: 10px 0;
-      padding-left: 10px;
-    }
-
-    p {
-      padding-bottom: 5px;
-    }
-
-    span {
-      @include span-item($font-color-light, 15px);
-      color: lighten($color-charcoal, 20%);
-
-      &:first-of-type {
-        margin-left: 10px;
-      }
-    }
   }
 
   .address, .facilities {

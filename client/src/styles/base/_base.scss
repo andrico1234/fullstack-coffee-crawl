@@ -30,11 +30,22 @@ h3 {
 }
 
 p, span {
-  color: $font-color-secondary;
+  color: $font-color-primary;
   margin: 0;
 }
 
 .ReactModal__Body--open {
   overflow: hidden;
 }
-//AIzaSyBE9cgGx0m_7Us1rJSjyLUmzEk8TZWnKqY
+
+.error-message {
+  background: $color-paleRed;
+  border-radius: 4px;
+  color: darken($color-paleRed, 30%);
+  font-weight: 300;
+  padding: 10px;
+
+  &.hidden {
+    display: none;
+  }
+}

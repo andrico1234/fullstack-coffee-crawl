@@ -30,18 +30,24 @@ class LocationList extends Component {
         });
     }
 
-    handleChange(event) {
-        this.setState({searchVal: event.target.value}, () => {
-            if (this.state.searchVal.length >= 2) {
-                this.setState({
-                    returnLocations: _.filter(this.props.data.location, (uniqueLocations) => {
-                        return uniqueLocations.title.toLowerCase().includes(this.state.searchVal.toLowerCase())
-                    })
-                });
-            } else {
-                this.setState({returnLocations: this.props.data.location});
+    async handleChange(event) {
+        await this.setState({searchVal: event.target.value});
+
+        if (this.state.searchVal.length >= 2) {
+            await this.setState({
+                returnLocations: _.filter(this.props.data.location, (uniqueLocations) => {
+                    return uniqueLocations.title.toLowerCase().includes(this.state.searchVal.toLowerCase())
+                })
+            });
+
+            if (this.state.searchVal.length >= 2 && this.state.returnLocations.length === 0) {
+                document.getElementsByClassName('error-message')[0].style.display = 'block';
             }
-        });
+        } else {
+            this.setState({returnLocations: this.props.data.location});
+            document.getElementsByClassName('error-message')[0].style.display = 'none';
+        }
+
     }
 
     sidebarContent = 'Brockley is known for it’s incredible cafes and restaurants. Spend an afternoon discovering some of the local establishments, soaking in the personality and drinking the excellent coffee.';
@@ -61,6 +67,7 @@ class LocationList extends Component {
                     <div className="search-bar-container">
                         <input value={this.state.searchVal} placeholder="Search" onChange={this.handleChange}/>
                     </div>
+                    <p className="error-message">No Cafes match your search query</p>
                     <div className="location-list-sidebar-wrapper">
                         <div className="list-wrapper">
                             {locationListItems}

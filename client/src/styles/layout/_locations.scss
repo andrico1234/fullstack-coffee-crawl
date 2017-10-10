@@ -43,10 +43,18 @@
     }
   }
 
+  .error-message {
+    display: none;
+    margin: 15px auto 0 auto;
+    padding: 11px;
+    width: 87%;
+  }
+
   header {
     @include responsive-ratio(4, 3);
     //background: url("../../images/coffee-shop-mobile.png") round;
     background-color: $background-dark;
+    background: linear-gradient(180deg, $color-charcoal 20%, $color-duskyGreen 100%);
     position: relative;
     text-align: center;
     width: 100%;

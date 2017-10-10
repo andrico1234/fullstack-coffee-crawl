@@ -59,16 +59,4 @@
     height: 40px;
     padding: 0 10px;
   }
-
-  .error-message {
-    background: $color-paleRed;
-    border-radius: 4px;
-    color: darken($color-paleRed, 30%);
-    font-weight: 300;
-    padding: 10px;
-
-    &.hidden {
-      display: none;
-    }
-  }
 }

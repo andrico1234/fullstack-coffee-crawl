@@ -188,7 +188,7 @@ table {
   border-spacing: 0; }
 
 .location-detail-wrapper .button, .location-review-form-wrapper button {
-  background-color: #faf7f6;
+  background-color: #fcfaf7;
   border: none;
   border-radius: 2px;
   color: #373737;
@@ -201,14 +201,34 @@ table {
   content: "";
   display: table; }
 
-.location-detail-wrapper .facilities, .location-detail-wrapper .map, .location-detail-wrapper .opening-hours, .location-detail-wrapper .review-container, .location-list-sidebar-wrapper .list-item {
-  background-color: #f1e8e6;
+.list-item-waiting, .location-detail-wrapper .facilities, .location-detail-wrapper .map, .location-detail-wrapper .opening-hours, .location-detail-wrapper .review-container, .location-list-sidebar-wrapper .list-item {
+  background-color: #f5eee4;
   margin: 10px 0;
   padding: 5px 0 10px 0;
   position: relative; }
 
+.list-item-waiting h3, .location-list-sidebar-wrapper .list-item h3 {
+  font-family: "Poiret One", "Oxygen", sans-serif;
+  font-size: 1.5em;
+  margin: 10px 0;
+  padding-left: 10px; }
+
+.list-item-waiting p, .location-list-sidebar-wrapper .list-item p {
+  padding-bottom: 5px; }
+
+.list-item-waiting span, .location-list-sidebar-wrapper .list-item span {
+  background-color: #fcfaf7;
+  border-radius: 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-left: 5px;
+  padding: 5px;
+  color: #6a6a6a; }
+  .list-item-waiting span:first-of-type, .location-list-sidebar-wrapper .list-item span:first-of-type {
+    margin-left: 10px; }
+
 .modal, .navModal {
-  background: #faf7f6;
+  background: #fcfaf7;
   border-radius: 4px;
   left: 50%;
   margin-right: -50%;
@@ -248,7 +268,7 @@ table {
     top: 120px; } }
 
 body {
-  background-color: #faf7f6;
+  background-color: #fcfaf7;
   box-sizing: border-box;
   font: 14px "Montserrat", sans-serif;
   left: 0;
@@ -272,16 +292,25 @@ h3 {
   margin: 5px 0 10px 0; }
 
 p, span {
-  color: #202930;
+  color: #373737;
   margin: 0; }
 
 .ReactModal__Body--open {
   overflow: hidden; }
 
+.error-message {
+  background: #e4b9bc;
+  border-radius: 4px;
+  color: #b94b52;
+  font-weight: 300;
+  padding: 10px; }
+  .error-message.hidden {
+    display: none; }
+
 footer {
   background-color: #373737;
   bottom: 0;
-  color: #faf7f6;
+  color: #fcfaf7;
   text-align: center;
   position: static; }
   @media (min-width: 768px) {
@@ -290,7 +319,7 @@ footer {
       text-align: left; } }
 
 .footer-container p {
-  color: #faf7f6;
+  color: #fcfaf7;
   display: inline-block;
   padding-bottom: 15px;
   padding-right: 20px;
@@ -323,7 +352,7 @@ footer {
   width: 30px; }
 
 .generic-page-wrapper {
-  background-color: #faf7f6;
+  background-color: #fcfaf7;
   padding: 55px 10px; }
   @media (min-width: 768px) {
     .generic-page-wrapper {
@@ -341,7 +370,7 @@ footer {
     padding: 0 15%; } }
 
 .location-wrapper {
-  background-color: #faf7f6;
+  background-color: #fcfaf7;
   padding: 55px 0; }
   @media (min-width: 768px) {
     .location-wrapper {
@@ -375,9 +404,15 @@ footer {
           width: 180px; }
           .location-wrapper .search-bar-container input:focus {
             width: 280px; } }
+  .location-wrapper .error-message {
+    display: none;
+    margin: 15px auto 0 auto;
+    padding: 11px;
+    width: 87%; }
   .location-wrapper header {
     padding-top: 75%;
     background-color: #373737;
+    background: linear-gradient(180deg, #373737 20%, #4d5b5b 100%);
     position: relative;
     text-align: center;
     width: 100%; }
@@ -388,14 +423,14 @@ footer {
       .location-wrapper header {
         padding-top: 43.75%; } }
     .location-wrapper header h1 {
-      color: #faf7f6;
+      color: #fcfaf7;
       font-size: 3em;
       margin: 0;
       position: absolute;
       top: 50%;
       width: 100%; }
     .location-wrapper header p {
-      color: #faf7f6;
+      color: #fcfaf7;
       position: absolute;
       top: 70%;
       width: 100%; }
@@ -403,8 +438,8 @@ footer {
         .location-wrapper header p {
           margin-left: 0; } }
 
-.list-item.waiting {
-  animation: pulse linear 1.5s infinite both; }
+.list-item-waiting {
+  animation: pulse linear 1.5s infinite both, fadeIn 0.2s ease-in; }
 
 .loading {
   height: 17px;
@@ -412,7 +447,7 @@ footer {
   width: 17px; }
 
 .location-detail-wrapper {
-  background-color: #faf7f6;
+  background-color: #fcfaf7;
   padding: 55px 0; }
   @media (min-width: 768px) {
     .location-detail-wrapper {
@@ -435,7 +470,7 @@ footer {
   .location-detail-wrapper .facilities h3, .location-detail-wrapper .map h3, .location-detail-wrapper .opening-hours h3, .location-detail-wrapper .review-container h3 {
     padding-left: 10px; }
   .location-detail-wrapper .facilities span {
-    background-color: #faf7f6;
+    background-color: #fcfaf7;
     border-radius: 15px;
     display: inline-block;
     font-weight: 600;
@@ -465,11 +500,11 @@ footer {
   .location-detail-wrapper .review {
     padding: 10px 0; }
     .location-detail-wrapper .review:nth-child(even) {
-      background-color: #f1e8e6; }
+      background-color: #f5eee4; }
       .location-detail-wrapper .review:nth-child(even) p {
         color: #373737; }
     .location-detail-wrapper .review:nth-child(odd) {
-      background-color: #faf7f6; }
+      background-color: #fcfaf7; }
   .location-detail-wrapper .review-container {
     margin: 10px auto 20px auto;
     padding-bottom: 0;
@@ -490,7 +525,7 @@ footer {
     height: 40px; }
 
 .location-review-form-wrapper {
-  background-color: #faf7f6;
+  background-color: #fcfaf7;
   padding: 20px 0; }
   .location-review-form-wrapper button {
     background-color: white;
@@ -534,14 +569,6 @@ footer {
   .location-review-form-wrapper select {
     height: 40px;
     padding: 0 10px; }
-  .location-review-form-wrapper .error-message {
-    background: #e4b9bc;
-    border-radius: 4px;
-    color: #b94b52;
-    font-weight: 300;
-    padding: 10px; }
-    .location-review-form-wrapper .error-message.hidden {
-      display: none; }
 
 .location-content-wrapper {
   max-width: 1280px; }
@@ -560,23 +587,6 @@ footer {
 
 .location-list-sidebar-wrapper .list-item {
   animation: fadeIn 0.2s ease-in; }
-  .location-list-sidebar-wrapper .list-item h3 {
-    font-family: "Poiret One", "Oxygen", sans-serif;
-    font-size: 1.5em;
-    margin: 10px 0;
-    padding-left: 10px; }
-  .location-list-sidebar-wrapper .list-item p {
-    padding-bottom: 5px; }
-  .location-list-sidebar-wrapper .list-item span {
-    background-color: #faf7f6;
-    border-radius: 15px;
-    display: inline-block;
-    font-weight: 600;
-    margin-left: 5px;
-    padding: 5px;
-    color: #6a6a6a; }
-    .location-list-sidebar-wrapper .list-item span:first-of-type {
-      margin-left: 10px; }
 
 .location-list-sidebar-wrapper .address, .location-list-sidebar-wrapper .facilities {
   padding-left: 10px; }
@@ -588,7 +598,7 @@ footer {
   font-weight: 600;
   margin-left: 5px;
   padding: 5px;
-  color: #faf7f6;
+  color: #fcfaf7;
   position: absolute;
   right: 10px;
   top: 19px; }
@@ -629,7 +639,7 @@ footer {
     padding: 0 5%; }
 
 nav {
-  background-color: #faf7f6;
+  background-color: #fcfaf7;
   box-shadow: -3px 4px 10px -2px rgba(0, 0, 0, 0.5);
   padding: 5px 0;
   position: fixed;
@@ -713,7 +723,7 @@ nav {
     font-size: 1em;
     padding: 5px 40px; }
     .mobile-nav-list Link:hover, .mobile-nav-list a:hover {
-      background-color: #e8dad5;
+      background-color: #f5eee4;
       cursor: pointer; }
     .mobile-nav-list Link p, .mobile-nav-list a p {
       color: #d66a00;

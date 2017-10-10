@@ -2,7 +2,7 @@ import React from 'react';
 
 const LocationListItemLoading = () => {
     return (
-        <div className="list-item waiting">
+        <div className="list-item-waiting">
             <h3 className="name">Loading...</h3>
             <p className="address">please wait</p>
             <div>
