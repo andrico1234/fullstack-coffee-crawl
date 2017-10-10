@@ -8,6 +8,16 @@
   }
 }
 
+@keyframes moveRight {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: 10%;
+  }
+}
+
 @keyframes pulse {
   from {
     opacity: 0.5
