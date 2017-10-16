@@ -462,6 +462,22 @@ footer {
   position: relative;
   width: 17px; }
 
+.single-location-loading .loading-header {
+  height: 69px; }
+
+.single-location-loading .opening-hours, .single-location-loading .facilities, .single-location-loading .map {
+  animation: pulse linear 1.5s infinite both, fadeIn 0.2s ease-in; }
+
+.single-location-loading .opening-hours {
+  height: 150px;
+  margin-top: 35px; }
+
+.single-location-loading .facilities {
+  height: 80px; }
+
+.single-location-loading .map {
+  height: 300px; }
+
 .location-detail-wrapper {
   background-color: #fcfaf7;
   padding: 55px 0; }
@@ -478,11 +494,6 @@ footer {
   .location-detail-wrapper .container {
     margin: 10px auto;
     width: 90%; }
-    @media (min-width: 768px) {
-      .location-detail-wrapper .container {
-        float: left;
-        padding-left: 5%;
-        width: 50%; } }
   .location-detail-wrapper .facilities h3, .location-detail-wrapper .map h3, .location-detail-wrapper .opening-hours h3, .location-detail-wrapper .review-container h3 {
     padding-left: 10px; }
   .location-detail-wrapper .facilities span {
@@ -496,21 +507,28 @@ footer {
   .location-detail-wrapper header {
     border-bottom: 1px solid #373737;
     display: flex; }
-    .location-detail-wrapper header h1 {
+    .location-detail-wrapper header h1, .location-detail-wrapper header h3 {
       align-self: center;
+      animation: fadeIn 1.0s; }
+    .location-detail-wrapper header h1 {
       flex-grow: 3;
       margin: 18px 0;
       padding: 0 5%; }
     .location-detail-wrapper header h3 {
-      align-self: center;
       flex-grow: 1; }
-  .location-detail-wrapper .map {
-    height: 50%; }
-    .location-detail-wrapper .map iframe {
-      display: block;
-      height: 50vh;
-      margin: 0 auto;
-      width: 90%; }
+    @media (min-width: 1024px) {
+      .location-detail-wrapper header {
+        margin: 0 auto;
+        width: 90%; }
+        .location-detail-wrapper header h1 {
+          padding: 0; } }
+  .location-detail-wrapper .opening-hours, .location-detail-wrapper .facilities, .location-detail-wrapper .map {
+    animation: fadeIn 0.3s ease-in; }
+  .location-detail-wrapper .map iframe {
+    display: block;
+    height: 50vh;
+    margin: 0 auto;
+    width: 90%; }
   .location-detail-wrapper .opening-hours p, .location-detail-wrapper .review p, .location-detail-wrapper .review-info {
     padding: 5px 10px; }
   .location-detail-wrapper .review {
@@ -539,6 +557,14 @@ footer {
         font-weight: 600; }
   .location-detail-wrapper .header {
     height: 40px; }
+  @media (min-width: 768px) {
+    .location-detail-wrapper {
+      margin: 0 auto;
+      max-width: 1280px; }
+      .location-detail-wrapper .container {
+        float: left;
+        padding-left: 5%;
+        width: 50%; } }
 
 .location-review-form-wrapper {
   background-color: #fcfaf7;
@@ -622,6 +648,9 @@ footer {
 .sidebar {
   font-size: 1em;
   padding: 0 5%; }
+  .sidebar p {
+    line-height: 1.4;
+    padding: 10px 0; }
   @media (min-width: 768px) {
     .sidebar {
       font-size: 1.5em;

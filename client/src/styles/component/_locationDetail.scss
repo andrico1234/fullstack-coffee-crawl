@@ -14,12 +14,6 @@
   .container {
     margin: 10px auto;
     width: 90%;
-
-    @media (min-width: $breakpoint-medium) {
-      float: left;
-      padding-left: 5%;
-      width: 50%;
-    }
   }
 
   .facilities, .map, .opening-hours, .review-container {
@@ -39,22 +33,36 @@
     border-bottom: 1px solid $color-charcoal;
     display: flex;
 
-    h1 {
+    h1, h3 {
       align-self: center;
+      animation: fadeIn 1.0s;
+    }
+
+    h1 {
       flex-grow: 3;
       margin: 18px 0;
       padding: 0 5%;
     }
 
     h3 {
-      align-self: center;
       flex-grow: 1;
+    }
+
+    @media (min-width: $breakpoint-large) {
+      margin: 0 auto;
+      width: 90%;
+
+      h1 {
+        padding: 0;
+      }
     }
   }
 
-  .map {
-    height: 50%;
+  .opening-hours, .facilities, .map {
+    animation: fadeIn 0.3s ease-in;
+  }
 
+  .map {
     iframe {
       display: block;
       height: 50vh;
@@ -106,6 +114,17 @@
 
   .header {
     height: 40px;
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    margin: 0 auto;
+    max-width: 1280px;
+
+    .container {
+      float: left;
+      padding-left: 5%;
+      width: 50%;
+    }
   }
 }
 

@@ -1,0 +1,22 @@
+.single-location-loading {
+  .loading-header {
+    height: 69px;
+  }
+
+  .opening-hours, .facilities, .map {
+    animation: pulse linear 1.5s infinite both, fadeIn 0.2s ease-in;
+}
+
+  .opening-hours {
+    height: 150px;
+    margin-top: 35px;
+  }
+
+  .facilities {
+    height: 80px;
+  }
+
+  .map {
+    height: 300px;
+  }
+}

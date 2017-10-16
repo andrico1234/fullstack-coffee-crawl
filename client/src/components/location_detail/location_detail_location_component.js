@@ -1,13 +1,12 @@
 import React from 'react';
 
+import LocationLoading from './location_detail_location_loading'
+
 const LocationComponent = ({location}) => {
+
     if (typeof location.address === 'undefined') {
         return (
-            <div>
-                <header>
-                    <h1>Loading</h1>
-                </header>
-            </div>
+            <LocationLoading/>
         )
     }
 
