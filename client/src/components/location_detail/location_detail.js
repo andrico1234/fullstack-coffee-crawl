@@ -50,7 +50,7 @@ class LocationDetail extends Component {
                     {locationReviews}
                 </div>
 
-                <ReactModal className="modal" isOpen={this.state.showModal} onRequestClose={this.closeModal} contentLabel="Review Modal">
+                <ReactModal className="modal" overlayClassName="review-modalOverlay" isOpen={this.state.showModal} onRequestClose={this.closeModal} contentLabel="Review Modal">
                     <ReviewFormComponent close={this.closeModal} params={this.props.match.params.id} />
                 </ReactModal>
 

@@ -6,6 +6,10 @@
   width: 60%;
 }
 
+.review-modalOverlay {
+  @extend %modalOverlay;
+  background: rgba(55, 55, 55, 0.5);
+}
 
 .modal-header {
   border-bottom: 1px solid $color-charcoal;

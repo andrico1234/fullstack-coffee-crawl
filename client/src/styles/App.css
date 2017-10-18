@@ -194,7 +194,10 @@ table {
   color: #373737;
   font-size: 0.9em;
   margin: 10px 0;
+  transition: background-color 0.2s linear;
   width: 90px; }
+  .location-detail-wrapper .button:hover, .location-review-form-wrapper button:hover {
+    background-color: #ff9024; }
 
 .sidebar:after {
   clear: both;
@@ -229,13 +232,20 @@ table {
 
 .modal, .navModal {
   background: #fcfaf7;
-  border-radius: 4px;
+  border-radius: 2px;
   left: 50%;
   margin-right: -50%;
   outline: none;
   overflow: auto;
   position: absolute;
   transform: translate(-50%, -50%); }
+
+.review-modalOverlay, .navModal-overlay {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0; }
 
 @keyframes fadeIn {
   from {
@@ -306,7 +316,7 @@ p, span {
 
 .error-message {
   background: #e4b9bc;
-  border-radius: 4px;
+  border-radius: 2px;
   color: #b94b52;
   font-weight: 300;
   padding: 10px; }
@@ -464,8 +474,11 @@ footer {
 
 .single-location-loading .loading-header {
   height: 69px; }
+  @media (min-width: 768px) {
+    .single-location-loading .loading-header {
+      height: 85px; } }
 
-.single-location-loading .opening-hours, .single-location-loading .facilities, .single-location-loading .map {
+.single-location-loading .opening-hours.preload, .single-location-loading .facilities.preload, .single-location-loading .map.preload {
   animation: pulse linear 1.5s infinite both, fadeIn 0.2s ease-in; }
 
 .single-location-loading .opening-hours {
@@ -494,8 +507,10 @@ footer {
   .location-detail-wrapper .container {
     margin: 10px auto;
     width: 90%; }
-  .location-detail-wrapper .facilities h3, .location-detail-wrapper .map h3, .location-detail-wrapper .opening-hours h3, .location-detail-wrapper .review-container h3 {
-    padding-left: 10px; }
+  .location-detail-wrapper .facilities, .location-detail-wrapper .map, .location-detail-wrapper .opening-hours, .location-detail-wrapper .review-container {
+    animation: fadeIn 0.2s ease-out; }
+    .location-detail-wrapper .facilities h3, .location-detail-wrapper .map h3, .location-detail-wrapper .opening-hours h3, .location-detail-wrapper .review-container h3 {
+      padding-left: 10px; }
   .location-detail-wrapper .facilities span {
     background-color: #fcfaf7;
     border-radius: 15px;
@@ -522,8 +537,6 @@ footer {
         width: 90%; }
         .location-detail-wrapper header h1 {
           padding: 0; } }
-  .location-detail-wrapper .opening-hours, .location-detail-wrapper .facilities, .location-detail-wrapper .map {
-    animation: fadeIn 0.3s ease-in; }
   .location-detail-wrapper .map iframe {
     display: block;
     height: 50vh;
@@ -588,7 +601,7 @@ footer {
   .location-review-form-wrapper input, .location-review-form-wrapper select, .location-review-form-wrapper textarea {
     background-color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 2px;
     box-sizing: border-box;
     display: block;
     margin-top: 3px;
@@ -663,6 +676,9 @@ footer {
   top: 50%;
   width: 60%; }
 
+.review-modalOverlay {
+  background: rgba(55, 55, 55, 0.5); }
+
 .modal-header {
   border-bottom: 1px solid #373737;
   margin-bottom: 10px; }
@@ -675,6 +691,9 @@ footer {
   padding: 20px;
   top: 50%;
   width: 60%; }
+
+.review-modalOverlay {
+  background: rgba(55, 55, 55, 0.5); }
 
 .modal-header {
   border-bottom: 1px solid #373737;
@@ -748,12 +767,7 @@ nav {
     animation: slideOutDown 0.2s 1; }
 
 .navModal-overlay {
-  background-color: transparent;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0; }
+  background-color: transparent; }
 
 .mobile-nav-list {
   display: inline-block;

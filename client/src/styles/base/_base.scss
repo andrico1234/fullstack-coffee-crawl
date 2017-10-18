@@ -40,7 +40,7 @@ p, span {
 
 .error-message {
   background: $color-paleRed;
-  border-radius: 4px;
+  border-radius: $border-radius;
   color: darken($color-paleRed, 30%);
   font-weight: 300;
   padding: 10px;

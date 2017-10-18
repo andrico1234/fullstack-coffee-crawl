@@ -20,7 +20,7 @@
   }
 }
 
-@mixin span-item($color, $radius: 3px) {
+@mixin span-item($color, $radius: 2px) {
   background-color: $color;
   border-radius: $radius;
   display: inline-block;
@@ -32,11 +32,16 @@
 %button {
   background-color: $background-primary;
   border: none;
-  border-radius: 2px;
+  border-radius: $border-radius;
   color: $background-dark;
   font-size: 0.9em;
   margin: 10px 0;
+  transition: background-color 0.2s linear;
   width: 90px;
+
+  &:hover {
+    background-color: lighten($font-color-bright, 15%);
+  }
 }
 
 %clearfix {
@@ -80,11 +85,19 @@
 
 %modal {
   background: $background-primary;
-  border-radius: 4px;
+  border-radius: $border-radius;
   left: 50%;
   margin-right: -50%;
   outline: none;
   overflow: auto;
   position: absolute;
   transform: translate(-50%, -50%);
+}
+
+%modalOverlay {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
 }

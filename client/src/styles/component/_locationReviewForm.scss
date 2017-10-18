@@ -29,7 +29,7 @@
   input, select, textarea {
     background-color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: $border-radius;
     box-sizing: border-box;
     display: block;
     margin-top: 3px;

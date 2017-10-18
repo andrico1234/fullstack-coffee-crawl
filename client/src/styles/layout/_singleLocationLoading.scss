@@ -1,11 +1,17 @@
 .single-location-loading {
   .loading-header {
     height: 69px;
+
+    @media (min-width: $breakpoint-medium) {
+      height: 85px;
+    }
   }
 
   .opening-hours, .facilities, .map {
-    animation: pulse linear 1.5s infinite both, fadeIn 0.2s ease-in;
-}
+    &.preload {
+      animation: pulse linear 1.5s infinite both, fadeIn 0.2s ease-in;
+    }
+  }
 
   .opening-hours {
     height: 150px;
