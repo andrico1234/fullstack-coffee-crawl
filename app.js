@@ -39,11 +39,6 @@ app.use((err, req, res) => {
     res.render('error');
 });
 
-app.get('/api/.well-known/acme-challenge/sqHPLXAcNek5jKZEM_Va2oJ4U3a6hgKGjgveaP_xTRM', (req, res) => {
-
-    res.send('sqHPLXAcNek5jKZEM_Va2oJ4U3a6hgKGjgveaP_xTRM._-X0dZSlb1TUYXGPt4ZlEr1dkrl8loIPD7Ws-1kRJLE');
-});
-
 app.listen(port, () => {
 
     console.log(`Started on Port ${port}`);
