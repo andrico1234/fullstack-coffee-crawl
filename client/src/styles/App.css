@@ -369,21 +369,27 @@ footer {
 
 .generic-page-wrapper {
   background-color: #fcfaf7;
-  padding: 55px 10px; }
+  padding: 55px 10px;
+  margin: 0 auto; }
   @media (min-width: 768px) {
     .generic-page-wrapper {
       padding: 75px 10px 60px 10px; } }
 
 .content {
-  margin: 1em 0; }
+  line-height: 1.4; }
 
-@media (min-width: 768px) {
-  .content, .subtitle, .title {
-    padding: 0 5%; } }
-
-@media (min-width: 1024px) {
-  .content, .subtitle, .title {
-    padding: 0 15%; } }
+.content, .subtitle, .title {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  padding: 2% 5%; }
+  @media (min-width: 768px) {
+    .content, .subtitle, .title {
+      max-width: 800px;
+      padding: 0 5%; } }
+  @media (min-width: 1024px) {
+    .content, .subtitle, .title {
+      padding: 0 15%; } }
 
 .location-wrapper {
   background-color: #fcfaf7;

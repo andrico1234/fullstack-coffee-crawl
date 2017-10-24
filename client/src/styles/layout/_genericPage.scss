@@ -1,13 +1,22 @@
 .generic-page-wrapper {
   @include page-wrapper(10px);
+  margin: 0 auto;
 }
 
 .content {
-  margin: 1em 0;
+  line-height: 1.4;
 }
 
 .content, .subtitle, .title {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  max-width: 600px;
+  padding: 2% 5%;
+
   @media(min-width: $breakpoint-medium) {
+    max-width: 800px;
     padding: 0 5%;
   }
 
