@@ -4,7 +4,6 @@ require('./config/config');
 
 const bodyParser = require('body-parser');
 const express = require('express');
-const favicon = require('serve-favicon');
 const path = require('path');
 const port = process.env.PORT || 5000;
 
