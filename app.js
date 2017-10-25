@@ -15,12 +15,17 @@ const {router} = require('./app_api/routes/locations');
 let app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.get('/.well-known/acme-challenge/9001', (req, res) => {
+    res.send('xxxxxxxxxxxx-yyyy.zzzzzzzzzzzzzzzzzzz');
+});
+
 app.use('/api', router);
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 app.use((req, res, next) => {
