@@ -4,6 +4,8 @@ require('./config/config');
 
 const bodyParser = require('body-parser');
 const express = require('express');
+const fs = require('fs');
+const https = require('https');
 const path = require('path');
 const port = process.env.PORT || 5000;
 
@@ -15,6 +17,7 @@ let app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(require('helmet')());
 
 app.get('/.well-known/acme-challenge/9001', (req, res) => {
     res.send('xxxxxxxxxxxx-yyyy.zzzzzzzzzzzzzzzzzzz');
@@ -43,10 +46,17 @@ app.use((err, req, res) => {
     res.render('error');
 });
 
+const options = {
+    cert: fs.readFileSync('./sscert/fullchain.pem'),
+    key: fs.readFileSync('./sscert/privkey.pem')
+};
+
 app.listen(port, () => {
 
     console.log(`Started on Port ${port}`);
 });
+
+https.createServer(options, app).listen(8443);
 
 module.exports = {
     app
