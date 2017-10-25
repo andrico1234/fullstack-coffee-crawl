@@ -4,6 +4,7 @@ require('./config/config');
 
 const bodyParser = require('body-parser');
 const express = require('express');
+const favicon = require('serve-favicon');
 const path = require('path');
 const port = process.env.PORT || 5000;
 
@@ -15,7 +16,7 @@ let app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-=app.use('/api', router);
+app.use('/api', router);
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('*', (req, res) => {
