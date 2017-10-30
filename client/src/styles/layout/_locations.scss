@@ -27,8 +27,8 @@
       width: 80%;
 
       &:focus {
-        border: 1px solid $color-orange;
-        box-shadow: 0 0 5px 2px rgba(214,106,0,0.5);
+        border: 1px solid $accent-color;
+        box-shadow: 0 0 5px 2px rgba(214, 106, 0, 0.5);
       }
 
       @media (min-width: $breakpoint-medium) {
@@ -52,16 +52,25 @@
 
   header {
     @include responsive-ratio(4, 3);
-    //background: url("../../images/coffee-shop-mobile.png") round;
+    background: url("../images/hero-image.jpg") round;
     background-color: $background-dark;
-    background: linear-gradient(180deg, $color-charcoal 20%, $color-duskyGreen 100%);
     position: relative;
     text-align: center;
     width: 100%;
 
+    &:before {
+      background-image: linear-gradient(180deg, $color-charcoal 20%, darken($accent-color, 20%) 100%);
+      bottom: 0;
+      content: '';
+      left: 0;
+      opacity: .7;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
     @media (min-width: $breakpoint-medium) {
       @include responsive-ratio(16, 9);
-      //background: url("../../images/coffee-shop-background-desktop.jpg") round;
     }
 
     @media (min-width: $breakpoint-large) {
@@ -97,6 +106,7 @@
       width: 100%;
 
       @media (min-width: $breakpoint-medium) {
+        font-size: $font-size-large;
         margin-left: 0;
       }
     }
